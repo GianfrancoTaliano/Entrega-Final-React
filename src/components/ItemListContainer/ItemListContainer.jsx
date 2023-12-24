@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { mFetch } from '../../helpers/mFetch'
 import { ItemList } from './ItemList/ItemList'
 import { getDocs } from 'firebase/firestore'
 import { getFirestore, collection, query, where } from 'firebase/firestore'
@@ -21,24 +20,14 @@ export const ItemListContainer = ({ greeting }) => {
     const dbFirestore = getFirestore()
 
     const queryCollection = collection(dbFirestore, 'products')
+    const queryItems = cid ? query(queryCollection, where('category', '==', cid)) : queryCollection
 
-    if (cid) {
-      const queryFilter = query(
-        queryCollection,
-        where('category', '==', cid)
-      )
 
-      getDocs(queryFilter)
+      getDocs(queryItems)
         .then((resp) => setProducts(resp.docs.map(producto => ({ id: producto.id, ...producto.data() }))))
         .catch((error) => console.log(error))
         .finally(() => setLoading(false))
-    } else {
-      getDocs(queryCollection)
-        .then((resp) => setProducts(resp.docs.map(producto => ({ id: producto.id, ...producto.data() }))))
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false))
-    }
-  }, [cid])
+    }, [cid])
 
   return (
     <div>

@@ -10,7 +10,7 @@ export const NavBar = () => {
   return (
     <Navbar expand="lg" className="bg-primary">
       <Container fluid>
-        <Navbar.Brand href="#">WorldPadle</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">WorldPadle</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

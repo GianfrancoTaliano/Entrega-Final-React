@@ -1,10 +1,14 @@
 
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { useCartContext } from '../../context/CartContext';
 
 export const CartWidget = () => {
+
+  const {getTotalQuantity} = useCartContext()
+
   return (
     <div>
-      2<AiOutlineShoppingCart style={{ fontSize: '2rem' }} />
+      {getTotalQuantity()}<AiOutlineShoppingCart style={{ fontSize: '2rem' }} />
     </div>
   );
 }
