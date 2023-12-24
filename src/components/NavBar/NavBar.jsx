@@ -1,10 +1,10 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { CartWidget } from '../CartWidget/CartWidget';
-import { Link, NavLink } from 'react-router-dom';
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Form from 'react-bootstrap/Form'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import { CartWidget } from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
   return (

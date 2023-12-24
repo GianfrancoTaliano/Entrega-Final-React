@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ItemList } from './ItemList/ItemList'
-import { getDocs } from 'firebase/firestore'
-import { getFirestore, collection, query, where } from 'firebase/firestore'
+import { getDocs, getFirestore, collection, query, where } from 'firebase/firestore'
 
 const Loading = () => {
   return <h2>Cargando... </h2>
